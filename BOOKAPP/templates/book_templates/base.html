@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <style type="text/css">
+        .backpic{background: url(/static/img/003.jpg); height: 650px; width: 1300px}
+        .colors{font-family: "Khmer OS"; font-size: 25px; color: crimson}
+        .colors1{font-family: "Khmer OS"; font-size: 20px; color: midnightblue}
+    </style>
+</head>
+<body>
+    <div class="backpic">
+        <h1 align="center" style="color: crimson">我是首页哟</h1>
+        {% block bases %}
+            <ul>
+                <a href="/index" class="colors1">新增</a>
+            {% for book in books %}
+                <li class="colors">{{ book }}---------><a href="/index" class="colors1">删除</a></li>
+            {% endfor %}
+            </ul>
+        {% endblock bases %}
+    </div>
+</body>
+</html>
